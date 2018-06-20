@@ -36,7 +36,7 @@ def parse_page(json, page: int):
     if json:
         items = json.get('data').get('cards')
         for index, item in enumerate(items):
-            if page == 1 and index == 1:
+            if item.get('card_type')!= 9:
                 continue
             else:
                 item = item.get('mblog')
